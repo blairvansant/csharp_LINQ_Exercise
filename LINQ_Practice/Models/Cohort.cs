@@ -14,5 +14,6 @@ namespace LINQ_Practice.Models
         public List<Student> Students { get; set; }
         public Instructor PrimaryInstructor { get; set; }
         public List<Instructor> JuniorInstructors { get; set; }
+        public object FirstName { get; internal set; }
     }
 }
