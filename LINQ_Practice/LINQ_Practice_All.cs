@@ -44,7 +44,7 @@ namespace LINQ_Practice
         [TestMethod]
         public void DoAllCohortsHavePrimaryInstructorsBornIn1980s()
         {
-            var doAll = PracticeData.All(GenerateCohorts => GenerateCohorts.PrimaryInstructor.Birthday.Year > 1979 && cohort.PrimaryInstructor.Birthday.Year < 1990 );
+            var doAll = PracticeData.All(GenerateCohorts => GenerateCohorts.PrimaryInstructor.Birthday.Year > 1979 && GenerateCohorts.PrimaryInstructor.Birthday.Year < 1990 );
             Assert.IsFalse(doAll); //<-- change true to doAll
         }
 
@@ -58,8 +58,8 @@ namespace LINQ_Practice
         [TestMethod]
         public void DoAllStudentsInCohort1HaveFirstNamesThatContainTheLetterE()
         {
-            var doAll = PracticeData; //Hint: Cohort1 would be PracticeData[0]
-            Assert.IsTrue(false); //<-- change false to doAll
+            var doAll = PracticeData[0].Students.All(FirstNameWithE => FirstNameWithE.FirstName.ToLower().Contains("e")); //Hint: Cohort1 would be PracticeData[0]
+            Assert.IsTrue(doAll); //<-- change false to doAll
         }
 
         [TestMethod]
