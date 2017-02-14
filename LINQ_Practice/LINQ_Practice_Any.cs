@@ -51,22 +51,22 @@ namespace LINQ_Practice
         [TestMethod]
         public void AreAnyCohortsBothFullTimeAndNotActive()
         {
-            var doAny = PracticeData/*FILL IN LINQ EXPRESSION*/;
-            Assert.IsTrue(false); //<-- change false to doAny
+            var doAny = PracticeData.Any(FullTimeAndNotActive => FullTimeAndNotActive.FullTime == true && FullTimeAndNotActive.Active == false);
+            Assert.IsTrue(doAny); //<-- change false to doAny
         }
 
         [TestMethod]
         public void AreAnyStudentsInCohort3NotActiveAndBornInOctober()
         {
-            var doAny = PracticeData/*FILL IN LINQ EXPRESSION*/;  //HINT: Cohort3 is PracticeData[2]
-            Assert.IsFalse(true); //<-- change true to doAny
+            var doAny = PracticeData[2].Students.Any(StudentsInCohort3NotActiveAndBornInOctober => StudentsInCohort3NotActiveAndBornInOctober.Active == false && StudentsInCohort3NotActiveAndBornInOctober.Birthday.Month == 10); 
+            Assert.IsFalse(doAny); //<-- change true to doAny
         }
 
         [TestMethod]
         public void AreAnyJuniorInstructorsInCohort4NotActive()
         {
-            var doAny = PracticeData/*FILL IN LINQ EXPRESSION*/;  //HINT: Cohort4 is PracticeData[3]
-            Assert.IsFalse(true); //<-- change true to doAny
+            var doAny = PracticeData[3].JuniorInstructors.Any(JrInstructorsNotActive => JrInstructorsNotActive.Active == false);  
+            Assert.IsFalse(doAny); //<-- change true to doAny
         }
     }
 }
