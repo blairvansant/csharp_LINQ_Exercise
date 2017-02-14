@@ -30,22 +30,22 @@ namespace LINQ_Practice
         [TestMethod]
         public void DoAnyCohortsHavePrimaryInstructorsBornIn1980s()
         {
-            var doAny = PracticeData/*FILL IN LINQ EXPRESSION*/;
-            Assert.IsTrue(false); //<-- change false to doAny
+            var doAny = PracticeData.Any(instructorsBornIn80s => instructorsBornIn80s.PrimaryInstructor.Birthday.Year > 1979 && instructorsBornIn80s.PrimaryInstructor.Birthday.Year < 1990);
+            Assert.IsTrue(doAny); //<-- change false to doAny
         }
 
         [TestMethod]
         public void DoAnyCohortsHaveActivePrimaryInstructors()
         {
-            var doAny = PracticeData/*FILL IN LINQ EXPRESSION*/;
-            Assert.IsTrue(false); //<-- change false to doAny
+            var doAny = PracticeData.Any(HavePrimaryInstructors => HavePrimaryInstructors.PrimaryInstructor.Active == true);
+            Assert.IsTrue(doAny); //<-- change false to doAny
         }
 
         [TestMethod]
         public void DoAnyActiveCohortsHave3JuniorInstructors()
         {
-            var doAny = PracticeData/*FILL IN LINQ EXPRESSION*/;
-            Assert.IsTrue(false); //<-- change false to doAny
+            var doAny = PracticeData.Any(Have3Instructors => Have3Instructors.JuniorInstructors.Count() <4);
+            Assert.IsTrue(doAny); //<-- change false to doAny
         }
 
         [TestMethod]
